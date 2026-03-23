@@ -347,40 +347,40 @@ if True:
         #Return
         return string.strip(" ")
 
-
-#Setting up arrays
-if True:
-    alphabet = [
-    "a",
-    "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    numbers = [
-        "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "—", "\""
-        ]
- 
-"""Runs the game"""   
-while True:
-    #User Input
-    user_input = input("What word do you want to translate: ").strip()
-    if not user_input:
-        continue
-    clean_word = user_input.strip("[]").lower()
-    #Admin code
+def runGame():
+    #Setting up arrays
     if True:
-        #Check if admin command is multi-part
-        contains_two_parts = user_input.count("-") > 0
+        alphabet = [
+        "a",
+        "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        numbers = [
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "—", "\""
+            ]
+     
+    """Runs the game"""   
+    while True:
+        #User Input
+        user_input = input("What word do you want to translate: ").strip()
+        if not user_input:
+            continue
+        clean_word = user_input.strip("[]").lower()
+        #Admin code
+        if True:
+            #Check if admin command is multi-part
+            contains_two_parts = user_input.count("-") > 0
+            
+            #Check if admin command is true
+            is_admin = user_input.startswith("[") or user_input.endswith("]")
+            
+            if is_admin:
+                runAdmin(user_input, contains_two_parts)
         
-        #Check if admin command is true
-        is_admin = user_input.startswith("[") or user_input.endswith("]")
         
-        if is_admin:
-            runAdmin(user_input, contains_two_parts)
-    
-    
-        #Check which languge to run
-        elif user_input[0].lower() in alphabet:
-            print(translateToNUM(clean_word))
-        elif user_input[0].lower() in numbers:
-            for _ in range(10):
-                print(translateToSTR(user_input))
+            #Check which languge to run
+            elif user_input[0].lower() in alphabet:
+                print(translateToNUM(clean_word))
+            elif user_input[0].lower() in numbers:
+                for _ in range(10):
+                    print(translateToSTR(user_input))
 
 
