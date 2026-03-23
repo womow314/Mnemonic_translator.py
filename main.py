@@ -383,4 +383,5 @@ def runGame():
                 for _ in range(10):
                     print(translateToSTR(user_input))
 
+runGame()
 
